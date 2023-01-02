@@ -1,15 +1,17 @@
 #include "headerfile.h"
 void deletee()
 {
+    system("cls");
     FILE *fileptr, *tempptr;
     char ch;
     fileptr = fopen("storage.bin", "rb+");
     item p1;
     tempptr = fopen("tempstorage.bin", "wb");
     int id, flag = 0;
-    printf("enter item id which u want to delete :");
-    scanf("%d", &id);
+    printf("____________________________ DELETE ITEM ____________________________\n\n");
 
+    printf("enter item id which u want to delete < ");
+    scanf("%d", &id);
     while (fread(&p1, sizeof(item), 1, fileptr) == 1)
     {
         if (p1.ID != id)
@@ -27,11 +29,11 @@ void deletee()
     rename("tempstorage.bin", "storage.bin");
     if (!flag)
     {
-        printf("item not found !!\n");
+        printf("                       item not found !!\n");
     }
     else
     {
-        printf("item deleted succesfully !\n");
+        printf("                       item deleted succesfully !\n");
     }
     scanf("%c", &ch);
 }

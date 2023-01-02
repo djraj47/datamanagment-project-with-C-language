@@ -4,7 +4,7 @@
 #include "deletee.c"
 #include"bill.c"
 
-int main()
+void mainmenu()
 {
     int option;
     char ch;
